@@ -21,8 +21,11 @@ jobs:
       - name: Build Windows EXE
         run: npm run package
 
+      - name: Check contents of out folder
+        run: dir out
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: Windows-App
-          path: out/make
+          path: ./out/make
